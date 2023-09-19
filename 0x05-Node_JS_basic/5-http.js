@@ -1,7 +1,8 @@
 const http = require('http');
-const students = require('./3-read_file_async');
-const hostname = '127.0.0.1';
+
+const hostname = 'localhost';
 const port = 1245;
+const students = require('./3-read_file_async');
 
 const app = http.createServer((req, res) => {
   res.statusCode = 200;
@@ -18,9 +19,9 @@ const app = http.createServer((req, res) => {
     }).catch((err) => res.end(err.message));
   }
 });
-  
+
 app.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}`);
+  console.log(`Server running at http://${hostname}:${port}/`);
 });
 
 module.exports = app;
